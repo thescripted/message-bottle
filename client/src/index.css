@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Neucha";
+  src: url("neucha-regular.woff2") format("woff2"),
+    url("neucha-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background: #e6ddd0;
+  margin: auto;
+  width: 750px;
+  font-family: Neucha, cursive;
+  font-size: 1.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+header {
+  font-size: 2em;
+  text-align: left;
+  line-height: 1.25;
+}
+
+/* App.js */
+.App {
+  text-align: left;
+  padding: 2rem;
+}
+
+/* HeaderField */
+.intro,
+.text-field,
+.footer-field {
+  max-width: 650px;
+  margin: auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #ecdfc8;
+  border: 1px solid #5d4037;
+  border-radius: 1%;
+}
+
+/* MessageField */
+
+.textarea {
+  box-sizing: border-box;
+  height: 10em;
+  margin: auto;
+  width: 100%;
+  border: 1px solid #5d4037;
+  background: transparent;
+  text-decoration: none;
+  font-family: Neucha, cursive;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  overflow: auto;
+  resize: none;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.submit-button {
+  background: transparent;
+  display: block;
+  left: 0px;
+  border: 1px solid #5d4037;
+  text-decoration: none;
+  font-family: Neucha, cursive;
+  font-size: 0.8em;
+  padding: 0.5rem;
+  border-radius: 5%;
+}
+
+.submit-button:hover {
+  background: #d9c3a3;
+}

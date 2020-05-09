@@ -1,0 +1,21 @@
+{
+  "name": "bottleproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "'Benjamin <'somethingscripted@gmail.com'>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "cd backend && nodemon server.js --exec babel-node --presets es2015",
+    "start:client": "cd client && yarn start"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.13",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.3"
+  }
+}
