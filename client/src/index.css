@@ -87,3 +87,8 @@ header {
 .submit-button:hover {
   background: #d9c3a3;
 }
+
+.thank-you {
+  display: flex;
+  justify-content: space-between;
+}

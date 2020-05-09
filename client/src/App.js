@@ -2,7 +2,7 @@ import React from "react";
 import MessageField from "./MessageField";
 import HeaderField from "./HeaderField";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header> Message in a Bottle... </header>
@@ -13,6 +13,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
