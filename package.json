@@ -17,5 +17,8 @@
     "mongoose": "^5.9.13",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.6"
   }
 }

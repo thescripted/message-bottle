@@ -49,6 +49,7 @@ header {
   background: #ecdfc8;
   border: 1px solid #5d4037;
   border-radius: 1%;
+  white-space: pre-wrap;
 }
 
 /* MessageField */

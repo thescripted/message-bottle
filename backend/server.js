@@ -4,9 +4,8 @@ import mongoose from "mongoose";
 import Message from "./models/Message";
 import bodyParser from "body-parser";
 
-// TODO: Hide your fucking password
 const uri =
-  "mongodb+srv://benjamin_kinga:Nourai8861@message-in-a-bottle-njf8i.gcp.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://benjamin_kinga:AHqv0Bi88fqCUjNi@message-in-a-bottle-njf8i.gcp.mongodb.net/bottle?retryWrites=true&w=majority";
 
 // Initializing connection to database
 mongoose.connect(uri, { useNewUrlParser: true });
@@ -48,7 +47,16 @@ router.post("/message", (req, res) => {
 });
 
 router.get("/request", (req, res) => {
-  console.log("The user sent a request...");
+  Message.estimatedDocumentCount().exec((err, count) => {
+    const random = Math.floor(Math.random() * count);
+
+    Message.findOne()
+      .skip(random)
+      .exec((err, result) => {
+        console.log(result);
+        return res.json({ message: result.body, time: result.date });
+      });
+  });
 });
 
 app.listen(3001, () => console.log(`Listening on port 3001`));

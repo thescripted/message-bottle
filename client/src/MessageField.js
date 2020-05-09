@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const MessageField = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("Dear Website...,\n\n");
   const [anotherMessage, isAnotherMessage] = useState(true);
 
   const handleSubmit = (e) => {
@@ -15,7 +15,7 @@ const MessageField = () => {
       .then((res) => res.json())
       .then((res) => {
         if (!res.success) console.log(res.error.message || res.error);
-        setMessage("");
+        setMessage("Dear Website...,\n\n");
         isAnotherMessage(false); // Remove the message box.
       })
       .catch((err) => throwErrorOnScreen());
@@ -26,9 +26,9 @@ const MessageField = () => {
   };
 
   return (
-    <form className="text-field" onSubmit={(e) => handleSubmit(e)}>
+    <div className="text-field">
       {anotherMessage ? (
-        <>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <textarea
             className="textarea"
             placeholder="Dear Website...,"
@@ -37,14 +37,19 @@ const MessageField = () => {
           ></textarea>
           <br />
           <input className="submit-button" type="submit" value="submit" />
-        </>
+        </form>
       ) : (
         <span className="thank-you">
           <p>Thank you!</p>
-          <button className="submit-button">Another Message?</button>
+          <button
+            className="submit-button"
+            onClick={() => isAnotherMessage(true)}
+          >
+            Another?
+          </button>
         </span>
       )}
-    </form>
+    </div>
   );
 };
 
